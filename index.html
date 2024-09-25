@@ -10,7 +10,6 @@
         CMJs.goToPurchasePage(); // Android 的通知方式
         window.webkit.messageHandlers.CMJs.postMessage('goToPurchasePage'); // iOS 的通知方式
     }
-
     window.onload = function() {
         document.getElementById("button1").onclick = function() {
             goToPurchasePage();
@@ -33,11 +32,6 @@
 <!-- 按鈕 -->
 <button id="button1">
     前往內購頁1
-</button>
-
-    <!-- 按鈕 -->
-<button onclick="window.webkit.messageHandlers.CMJs.postMessage('goToPurchasePage')">
-    前往內購頁2
 </button>
 
 </body>
