@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>跳轉按鈕</title>
     <script language="javascript">
-    window.onload = function() {
-        document.getElementById("button1").onclick = function() {
-                // 發送訊息到 iOS App
-                window.webkit.messageHandlers.CMJs.postMessage("goToPurchasePage");
-            };
-        };
+    // 呼叫前往購買頁面
+    function goToPurchasePage() {
+        //CMJs.goToPurchasePage(); // Android 的通知方式
+        window.webkit.messageHandlers.CMJs.postMessage('goToPurchasePage'); // iOS 的通知方式
     }
     </script>
 </head>
