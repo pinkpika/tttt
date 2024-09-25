@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>跳轉按鈕</title>
+    <script language="javascript">
+    // 呼叫前往購買頁面
+    function goToPurchasePage() {
+        CMJs.goToPurchasePage(); // Android 的通知方式
+        window.webkit.messageHandlers.CMJs.postMessage("goToPurchasePage"); // iOS 的通知方式
+    }
+    </script>
 </head>
 <body>
 
@@ -16,6 +23,8 @@
 <button onclick="window.location.href='https://chipk.page.link/mpeD'">
     前往股票頁面2
 </button>
+
+<button type="button" id="button1" onclick="goToPurchasePage()">
 
 </body>
 </html>
