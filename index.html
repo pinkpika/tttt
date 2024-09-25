@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>跳轉按鈕</title>
+    <script>
+        // 呼叫前往購買頁面
+        function goToPurchasePage() {
+            CMJs.goToPurchasePage(); // Android 的通知方式
+            window.webkit.messageHandlers.CMJs.postMessage("goToPurchasePage"); // iOS 的通知方式
+        }
+    </script>
 </head>
 <body>
 
@@ -11,6 +18,8 @@
 <button onclick="window.location.href='https://www.cmoney.tw/app/landing_page/chipk?page=stock&subpage=0&stockid=1101&stockname=%E5%8F%B0%E6%B3%A5'">
     前往股票頁面
 </button>
+
+    <button type="button" id="button1" onclick="showToast()">
 
 </body>
 </html>
