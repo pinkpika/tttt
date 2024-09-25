@@ -6,13 +6,12 @@
     <title>跳轉按鈕</title>
     <script language="javascript">
     // 呼叫前往購買頁面
-    function goToPurchasePage() {
-        CMJs.goToPurchasePage(); // Android 的通知方式
-        window.webkit.messageHandlers.CMJs.postMessage('goToPurchasePage'); // iOS 的通知方式
-    }
     window.onload = function() {
-        document.getElementById("button1").onclick = function() {
-            goToPurchasePage();
+        document.getElementById("ibutton").onclick = function() {
+            window.webkit.messageHandlers.CMJs.postMessage('goToPurchasePage'); // iOS 的通知方式
+        };
+        document.getElementById("abutton").onclick = function() {
+            CMJs.goToPurchasePage(); // Android 的通知方式
         };
     };
     </script>
@@ -30,8 +29,13 @@
 </button>
 
 <!-- 按鈕 -->
-<button id="button1">
-    前往內購頁1
+<button id="ibutton">
+    iOS前往內購頁
+</button>
+
+<!-- 按鈕 -->
+<button id="abutton">
+    Android前往內購頁
 </button>
 
 </body>
