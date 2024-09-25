@@ -7,7 +7,6 @@
     <script language="javascript">
     // 呼叫前往購買頁面
     function goToPurchasePage() {
-        CMJs.goToPurchasePage(); // Android 的通知方式
         window.webkit.messageHandlers.CMJs.postMessage("goToPurchasePage"); // iOS 的通知方式
     }
     </script>
